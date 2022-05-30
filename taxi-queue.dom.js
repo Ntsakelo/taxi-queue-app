@@ -43,9 +43,9 @@ leaveBtn.addEventListener("click", function () {
   taxiQueue.leaveQueue();
   passengerCount.innerHTML = taxiQueue.queueLength();
 
-  let thisCount = taxiQueue.queueLength();
+  let pCount = taxiQueue.queueLength();
   let storageCount = JSON.parse(localStorage.getItem("passCount"));
-  storageCount = thisCount;
+  storageCount = pCount;
   localStorage.setItem("passCount", storageCount);
 });
 
