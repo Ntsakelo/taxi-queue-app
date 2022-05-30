@@ -65,4 +65,14 @@ departBtn.addEventListener("click", function () {
 
   taxiCount.innerHTML = taxiQueue.taxiQueueLength();
   passengerCount.innerHTML = taxiQueue.queueLength();
+
+  let countPassenger = taxiQueue.queueLength();
+  let passengerStorage = JSON.parse(localStorage.getItem("passCount"));
+  passengerStorage = countPassenger;
+  localStorage.setItem("passCount", passengerStorage);
+
+  let newTaxiCount = taxiQueue.taxiQueueLength();
+  let taxiStorage = JSON.parse(localStorage.getItem("taxiCount"));
+  taxiStorage = newTaxiCount;
+  localStorage.setItem("taxiCount", taxiStorage);
 });
