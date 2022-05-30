@@ -42,6 +42,11 @@ joinBtn.addEventListener("click", function () {
 leaveBtn.addEventListener("click", function () {
   taxiQueue.leaveQueue();
   passengerCount.innerHTML = taxiQueue.queueLength();
+
+  let thisCount = taxiQueue.queueLength();
+  let storageCount = JSON.parse(localStorage.getItem("passCount"));
+  storageCount = thisCount;
+  localStorage.setItem("passCount", storageCount);
 });
 
 //Taxi join

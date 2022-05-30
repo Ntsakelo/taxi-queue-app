@@ -163,4 +163,26 @@ describe("The taxi queue app", function () {
     assert.equal(0, taxiQueue.taxiQueueLength());
     assert.equal(15, taxiQueue.queueLength());
   });
+  describe("Initialize counters", function () {
+    it("should be able to initialize the taxi count to 5", function () {
+      const taxiQueue = TaxiQueue();
+      taxiQueue.newTaxiCount(5);
+      assert.equal(5, taxiQueue.taxiQueueLength());
+    });
+    it("should be able to initialize the taxi count to 3", function () {
+      const taxiQueue = TaxiQueue();
+      taxiQueue.newTaxiCount(3);
+      assert.equal(3, taxiQueue.taxiQueueLength());
+    });
+    it("should be able to initialize the passenger count to 6", function () {
+      const taxiQueue = TaxiQueue();
+      taxiQueue.newPeopleCount(6);
+      assert.equal(6, taxiQueue.queueLength());
+    });
+    it("should be able to initialize the passenger count to 7", function () {
+      const taxiQueue = TaxiQueue();
+      taxiQueue.newPeopleCount(7);
+      assert.equal(7, taxiQueue.queueLength());
+    });
+  });
 });
